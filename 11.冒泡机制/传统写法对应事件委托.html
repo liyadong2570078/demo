@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <input type="button" id="btn"  value="增加"/>
+<ul id="ul">
+<li>aaaaaaaa</li>
+<li>bbbbbbbb</li>
+<li>cccccccc</li>
+</ul> 
+    </body>
+    <script>
+window.onload = function(){
+var oUl = document.getElementById("ul");
+var aLi = oUl.getElementsByTagName("li");
+var oBtn = document.getElementById("btn");
+var iNow = 4;
+for(var i=0; i<aLi.length; i++){
+aLi[i].onmouseover = function(){
+this.style.background = "red";
+}
+aLi[i].onmouseout = function(){
+this.style.background = "";
+}
+}
+oBtn.onclick = function(){
+iNow ++;
+var oLi = document.createElement("li");
+oLi.innerHTML = 1111 *iNow;
+oUl.appendChild(oLi);
+}
+}
+//这样做我们可以看到点击按钮新加的li上面没有鼠标移入事件来改变他们的背景颜色。
+//因为点击添加的时候for循环已经执行完毕。
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .yanse{
+            background-color: green;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var btn=document.getElementsByTagName("button");
+
+           for(i=0;i<btn.length;i++){
+               btn[i].onmouseover=function(){
+                   for(j=0;j<btn.length;j++){
+                       btn[j].className="";
+                   }
+                   this.className="yanse";
+               }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<button>思想原理</button>
+<button>思想原理</button>
+<button>思想原理</button>
+<button>思想原理</button>
+<button>思想原理</button>
+<button>思想原理</button>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    #neirong{
+        width: 200px;
+        height: 300px;
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+<ul id="ul">
+</ul>
+<div id="neirong"></div>
+</body>
+</html>
+<script>
+    var arr = [15,25,35,45];
+    console.log(arr[1]);//25
+    var json = {width: 25,height:30};
+    console.log(json.width);//25
+    var json1 = {name :"刘德华",age: 55,color:"red"};
+    console.log(json1.name);  // 输出名字
+    console.log(json1.age);  // 输出年龄
+    console.log(json1.color);
+   //将数组 json里的值传到
+
+     var ulObj=document.querySelector("#ul");
+     var neirongObj=document.querySelector("#neirong");
+    console.log(ulObj);
+    for(var key in json1){   //  键（属性） in 对象 键(属性)可以随意取名  这样可以取出里面的键
+    	//创建li并将属性赋值给li的内容
+        var liObj=document.createElement("li");
+    	liObj.innerHTML=key;
+      //给li增加一个自定义属性 赋值的是 键（属性） 并追加到ul里去
+        liObj.setAttribute("data-shuxing",key);
+    	ulObj.appendChild(liObj);
+
+        //neirongObj.innerHTML=json1[key];
+    }
+
+
+    var lis= document.querySelectorAll('#ul>li'); //找到刚创建全部的li 可以用children方法
+  console.log(lis);
+    for( var i=0; i<lis.length;i++) {
+
+    lis[i].addEventListener("click",function() {
+        var ss = this.dataset.shuxing;  //获得自定义属性 键，这里的含义是 获得他的值也就是上面的key
+        console.log(ss);
+        neirongObj.innerHTML = json1[ss];  //json[key]就代表的 json里key的值(刘德华);
+    });
+    }
+</script>

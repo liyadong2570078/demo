@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		.box{
+			width: 400px;
+			margin: 100px auto;
+			boder 1px solid #ccc;
+		}
+		.top{
+			text-align: center;
+		}
+		.down div{
+			width: 100%;
+			height: 300px;
+			boder 1px solid #ccc;
+			background-color: green;
+			display: none;
+		}
+		.down .xianshi{
+			display: block;
+		}
+		.red{
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var btns=document.getElementsByTagName("button");
+		//console.log(btns);
+		 
+		 var box=document.getElementById("hezi").getElementsByTagName("div");
+		 for (var i = 0; i < btns.length; i++) {
+		 	btns[i].index=box[i];  //可以写一个属性接受一个变量数组的信息 然后进行循环
+		 	
+		 	btns[i].onclick=function(){
+		 		 //console.log(this.index)
+		 		for (var j = 0; j < btns.length; j++) {
+		 			btns[j].className="";
+		 			btns[j].index.className="";
+
+		 		}
+		 		    this.className="red";
+                    this.index.className="xianshi";
+
+		 	}
+		 }
+	      }
+	</script>
+</head>
+<body>
+<div class=box>
+	<div class="top">
+		<button>选项卡1</button>
+		<button>选项卡2</button>
+		<button>选项卡3</button>
+		<button>选项卡4</button>
+		<button>选项卡5</button>
+	</div>
+	<div class="down" id="hezi">
+		<div class="xianshi">盒子1</div>
+		<div>盒子2</div>
+		<div>盒子3</div>
+		<div>盒子4</div>
+		<div>盒子5</div>
+	</div>
+</div>	
+</body>
+</html>

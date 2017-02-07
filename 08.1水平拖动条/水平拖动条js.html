@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平拖动条</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .scroll{
+            width: 400px;
+            height: 8px;
+            background-color:#ccc;
+            margin: 100px;
+            position: relative;
+        }
+        .bar{
+            width: 8px;
+            height: 23px;
+            background-color: #369;
+            position: absolute;
+            top:-7px;
+            left:0;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="scroll" id="scroll">
+    <div class="bar" ></div>
+</div>
+</body>
+</html>
+<script>
+    var srcollObj=document.getElementById("scroll");
+    var barObj=srcollObj.children[0];
+    barObj.onmousedown=function(event){
+       //alert(11);
+        //拖动一定要写到down里才可以
+         //当我们按下鼠标的时候就要记录当前鼠标的位置 大盒子的位置算出bar当前大盒子的距离
+        var event=event||window.event;
+        //var leftVal=event.clientX-srcollObj.offsetLeft;
+          var leftVal=event.clientX-this.offsetLeft;
+        document.onmousemove=function(event){
+                   var event=event||window.event;
+            // barObj.style.left=event.clientX-leftVal-srcollObj.offsetLeft+'px';
+            barObj.style.left=event.clientX-leftVal+'px';
+              }
+             }
+    document.onmouseup=function(){
+        document.onmousemove=null;
+    }
+</script>

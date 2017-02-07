@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+// 	 缓动动画公式:
+//     一个盒子初始值  是  0      要走到 400 px 的位置  
+// 假如说，初始值   leader  0          target  400
+  box.style.left =  xxxx +   “px”
+  leader = leader + (target - leader ) /10 ;
+    
+1     btn.onclick = function() {
+2          setInterval(function(){
+3              leader = leader + (target - leader )/10;
+4              box.style.left = leader + "px";
+5          },30)
+6      }
+</script>
